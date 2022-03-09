@@ -115,7 +115,7 @@ inputs = {
 
   crossplane_deploy        = true
   crossplane_chart_version = "1.5.1-up.1"
-  crossplane_providers     = ["crossplane/provider-aws:v0.22.0", "crossplane/provider-kubernetes:v0.1.0"]
+  crossplane_providers     = ["crossplane/provider-aws:v0.24.1", "crossplane/provider-kubernetes:v0.1.0"]
   crossplane_admin_service_accounts = [
     {
       serviceaccount = "default"
@@ -123,6 +123,9 @@ inputs = {
     }
   ]
   eks_openid_connect_provider_url = dependency.cluster.outputs.eks_openid_connect_provider_url
+
+  crossplane_cfg_pkg_deploy       = true
+  crossplane_cfg_pkg_docker_image = "dfdsdk/dfds-infra:v0.0.1-alpha.23"
 
   # --------------------------------------------------
   # Atlantis
